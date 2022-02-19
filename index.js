@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // for(let i = 0; i< array.length; i++) {
+   
+  //   for(let j = i + 1; j< array.length; j++) {
+  //     if(target - array[i] === array[j]) {
+  //       return true
+  //     }
+  //   }
+  // }
+  // return false
+  const obj = {}
+  for(const num of array) {
+    const expectedValue = target - num
+    if(obj[expectedValue]) {
+      return true
+    }
+    obj[num] = num
+  }
+  return false
 }
 
+
 /* 
-  Write the Big O time complexity of your function here
+  0(n*2)
 */
 
 /* 
-  Add your pseudocode here
+  start a for loop for the first number to test
+  start a 2nd loop, for all the other numbers you will compare to the first number and the target.
+  return true if the target - num1 = num2
 */
 
 /*
